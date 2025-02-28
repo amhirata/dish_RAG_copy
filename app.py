@@ -12,15 +12,18 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-firebase_credentials = json.loads(st.secrets["firebase_credentials"])
+# Load Firebase credentials from Streamlit secrets
+firebase_config = st.secrets["firebase"]
 # -----------------------
 # 1. INITIAL SETUP
 # -----------------------
 
-# Initialize Firebase Admin SDK
-# Make sure you have your Firebase service account JSON in the same folder or specify the path
-if not firebase_admin._apps:
-    cred = credentials.Certificate(firebase_credentials)
+# Convert to dictionary
+firebase_dict = {key: value for key, value in firebase_config.items()}
+
+# Initialize Firebase
+if not firebase_admin._apps:  # Avoid re-initialization
+    cred = credentials.Certificate(firebase_dict)
     firebase_admin.initialize_app(cred)
 # Get Firestore client
 db = firestore.client()
