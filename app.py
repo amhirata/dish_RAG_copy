@@ -19,7 +19,7 @@ load_dotenv()
 # Initialize Firebase Admin SDK
 # Make sure you have your Firebase service account JSON in the same folder or specify the path
 if not firebase_admin._apps:
-    cred = credentials.Certificate("FirebaseAccountKey.json")
+    cred = credentials.Certificate('firebase_key')
     firebase_admin.initialize_app(cred)
 # Get Firestore client
 db = firestore.client()

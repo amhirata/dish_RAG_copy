@@ -1,0 +1,6 @@
+streamlit
+openai
+pinecone-client
+firebase-admin
+python-dotenv
+
