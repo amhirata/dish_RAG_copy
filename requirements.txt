@@ -1,6 +1,5 @@
 streamlit
 openai
-pinecone
+"pinecone[asyncio,grpc]"
 firebase-admin
 python-dotenv
-
