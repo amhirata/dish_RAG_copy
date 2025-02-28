@@ -11,7 +11,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-
+firebase_credentials = json.loads(st.secrets["firebase_credentials"])
 # -----------------------
 # 1. INITIAL SETUP
 # -----------------------
@@ -19,7 +19,7 @@ load_dotenv()
 # Initialize Firebase Admin SDK
 # Make sure you have your Firebase service account JSON in the same folder or specify the path
 if not firebase_admin._apps:
-    cred = credentials.Certificate('firebase_key')
+    cred = credentials.Certificate(firebase_credentials)
     firebase_admin.initialize_app(cred)
 # Get Firestore client
 db = firestore.client()
