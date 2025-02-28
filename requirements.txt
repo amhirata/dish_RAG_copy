@@ -1,6 +1,6 @@
 streamlit
 openai
-pinecone-client
+pinecone
 firebase-admin
 python-dotenv
 
