@@ -1,3 +1,4 @@
+import json
 import streamlit as st
 import openai
 import pinecone
